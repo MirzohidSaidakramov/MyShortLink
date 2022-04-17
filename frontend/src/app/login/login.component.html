@@ -1,0 +1,50 @@
+<div style="margin-top: 4rem;">
+<mat-card class="card" color="primary">
+
+    <div class="card-content">
+      <mat-card-title>
+        Kirish
+      </mat-card-title>
+      <mat-card-content>
+  
+        <form [formGroup] = "formGroup" (ngSubmit) = "signIn()">
+        <mat-form-field appearance="outline" color="primary">
+          <mat-label>Sizning Loginingiz</mat-label>
+          <input 
+          type="text" 
+          formControlName = "login"
+          matInput >
+          <div *ngIf = "controlForm('login')?.touched && controlForm('login')?.invalid ">
+              <div style="color: red;"> {{returnErrors(controlForm('login')?.errors)}}</div>
+
+          </div>
+        </mat-form-field>
+  
+  
+      
+  
+        <mat-form-field appearance="outline" color="primary">
+          <mat-label>Sizning  Parolingiz</mat-label>
+          <input 
+          type="password" 
+          formControlName = "password"
+          matInput >
+          <div *ngIf = "controlForm('password')?.touched && controlForm('password')?.invalid ">
+            <div style="color: red;"> {{returnErrors(controlForm('password')?.errors)}}</div>
+
+        </div>
+        </mat-form-field>
+
+      </form>
+  
+       
+  
+  
+      </mat-card-content>
+      <mat-card-actions>
+        <button color="primary" type="submit" (click)="signIn()" mat-button>Kirish</button>
+      </mat-card-actions>
+  
+    </div>
+  </mat-card>
+</div>

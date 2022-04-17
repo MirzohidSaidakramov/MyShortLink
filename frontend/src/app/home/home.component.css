@@ -1,0 +1,64 @@
+.container {
+   
+    width: 70%;
+    margin:0 auto;
+}
+
+.box {
+    background-color: #555555;
+    padding: 20px 25px;
+    border: 5px solid red;
+    margin-top: 30px;
+
+
+}
+
+.box h1 {
+    text-align: center;
+    text-decoration: underline;
+    font-family: sans-serif;
+    color: white;
+}
+.box p {
+    color: blue;
+}
+.button {
+    background-color: #222;
+    color: #fff;
+    font-size:18px;
+    border: 1px solid #222;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.button:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: #222;
+}
+.box2 {
+    margin-top: 30px;
+    border: 5px solid #555555;
+    padding: 10px;
+
+}
+.element{
+    padding: 0;
+}
+.element li {
+    list-style-type: none;
+    padding: 5px 0;
+    border-bottom: 1px solid red;
+}
+.form1 {
+    margin: 20px 0;
+    font-family: sans-serif;
+}
+
+.form1 label {
+    display: block;
+    margin: 5px 0;
+}
+.form1 input {
+    padding: 5px 2px;
+    width: 100%;
+}

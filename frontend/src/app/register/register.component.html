@@ -1,0 +1,53 @@
+<div style="margin-top: 4rem;"></div>
+<mat-card class="card" >
+
+  <form [formGroup]="formGroup" (ngSubmit) = "register()">
+   
+    <mat-card-title>
+      Ro'yxatdan o'tish
+    </mat-card-title>
+    <mat-card-content>
+
+
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Sizning yangi Loginingiz</mat-label>
+        <input id="login" type="text" formControlName="login" matInput>
+        <div *ngIf  = "controlForm('login')?.pending">
+          <mat-progress-bar mode = "indeterminate"></mat-progress-bar>
+        </div>
+        <div *ngIf="controlForm('login')?.touched && controlForm('login')?.invalid" style="color: red;">
+          <div>{{returnErrors(controlForm('login')?.errors)}}</div>
+        </div>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Sizning Email manzilingiz</mat-label>
+        <input id="email" type="email" formControlName="email" matInput>
+        <div *ngIf  = "controlForm('email')?.pending">
+          <mat-progress-bar mode = "indeterminate"></mat-progress-bar>
+        </div>
+        <div *ngIf="controlForm('email')?.touched && controlForm('email')?.invalid" style="color: red;">
+          <div>{{returnErrors(controlForm('email')?.errors)}}</div>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" color="primary">
+        <mat-label>Sizning yangi Parolingiz</mat-label>
+        <input type="password" id="password " formControlName="password" matInput>
+        <div *ngIf="controlForm('password')?.touched && controlForm('password')?.invalid" style="color: red;">
+          <div>{{returnErrors(controlForm('password')?.errors)}}</div>
+        </div>
+      </mat-form-field>
+
+
+  
+
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button [disabled] = "controlForm('password')?.invalid || controlForm('email')?.invalid || controlForm('login')?.invalid" color="primary" type="submit" mat-button>Ro'yxatdan o'tish</button>
+    </mat-card-actions>
+  </form>
+
+</mat-card>
