@@ -10,10 +10,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpService } from './common/services/http.service';
 import { CustomValidators } from './common/custom.validators';
 import { MyPageComponent } from './my-page/my-page.component';
+import { AuthInterceptorService } from './common/services/auth-interceptor.service';
+import { CreateComponent } from './create/create.component';
+import { LinksComponent } from './links/links.component';
+import { LinkComponent } from './link/link.component';
+import { AuthGuardService } from './common/services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,10 @@ import { MyPageComponent } from './my-page/my-page.component';
     NavbarComponent,
     HomeComponent,
     LoginComponent,
-    MyPageComponent
+    MyPageComponent,
+    CreateComponent,
+    LinksComponent,
+    LinkComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +41,11 @@ import { MyPageComponent } from './my-page/my-page.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [HttpService,CustomValidators],
+  providers: [HttpService,CustomValidators,{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  },AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

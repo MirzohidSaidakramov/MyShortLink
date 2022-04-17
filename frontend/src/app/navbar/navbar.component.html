@@ -1,7 +1,16 @@
 <mat-toolbar color="primary" class="navbar">
-    <button mat-button routerLink = "/">MyShortLink</button>
+    <button mat-button >MyShortLink</button>
     <div>
-        <button mat-button routerLink = "/login">Kirish</button>
-        <button mat-button router routerLink = "/register">Ro'yxatdan o'tish</button>
+        <button *ngIf="!isAuthenticated" mat-button routerLink = "/login">Kirish</button>
+        <button *ngIf="!isAuthenticated" mat-button router routerLink = "/register">Ro'yxatdan o'tish</button>
+        <button *ngIf="isAuthenticated" mat-button router routerLink = "/create" >Yangi Silka</button>
+        <button *ngIf="isAuthenticated" mat-button router routerLink = "/links">Silkalar</button>
+        <button *ngIf="isAuthenticated" mat-button [mat-menu-trigger-for]="appMenu">Foydalanuvchi</button>
+        
     </div>
 </mat-toolbar>
+
+<mat-menu #appMenu = "matMenu" >
+    <button color = "primary" router routerLink = "/me" mat-menu-item>{{account?.login}}</button>
+    <button (click) = "logOut()" mat-menu-item>CHiqish</button>
+</mat-menu>

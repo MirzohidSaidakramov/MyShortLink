@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomValidators } from '../common/custom.validators';
 import { HttpService } from '../common/services/http.service';
 
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     ])
   }
   formGroup = new FormGroup(this.formControl);
-  constructor(private http:HttpService, private router:Router, private matSnackBar:MatSnackBar) { }
+  constructor(private http:HttpService,  private router:Router, private matSnackBar:MatSnackBar) { }
 
   ngOnInit(): void {
   }

@@ -50,6 +50,12 @@ export class CustomValidators {
         return null
 
     }
+    static includeHttp(controls: AbstractControl): ValidationErrors | null {
+        if (!(controls.value as string).toLowerCase().includes('http') )
+            return { includeHttp: true }
+        return null
+
+    }
 
 
 

@@ -7,3 +7,8 @@
 .cardContent{
     margin-top: 3rem;
 }
+p{
+    padding-left: 15px;
+    padding-bottom: 5px;
+    font-size: 20px;
+}

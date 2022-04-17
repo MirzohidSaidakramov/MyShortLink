@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const config = require('config');
 module.exports = function (){
-    mongoose.connect('mongodb://localhost/myshortlink')
+    mongoose.connect(config.get('MongoDBUrl'))
     .then(()=>{
         console.log('Malumotlar omboriga ulandi');
     })

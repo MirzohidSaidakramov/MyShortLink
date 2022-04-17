@@ -1,6 +1,5 @@
 .card {
     max-width: 800px;
-    max-height: 8000px;
     margin: auto;
     
 }
@@ -8,5 +7,5 @@
     padding: 1rem;
 }
 .card-content p {
-    font-size: 25px;
+    font-size: 20px;
 }

@@ -3,7 +3,8 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt')
 const User = require('../modules/user_module');
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const config = require('config');
 
 router.post('/',async (req,res)=>{
    const salt = await bcrypt.genSalt();
@@ -15,7 +16,7 @@ router.post('/',async (req,res)=>{
 
     })
     const savedUser = await user.save()
-    const token = jwt.sign({id:savedUser._id},'gulshodaxonim');
+    const token = jwt.sign({id:savedUser._id},config.get('JwtSecret'));
 
     return res.send({isRegistered:true,token:token});
    

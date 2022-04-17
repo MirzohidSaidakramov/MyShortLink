@@ -1,0 +1,10 @@
+
+{
+   "MongoDBUrl": "",
+   "baseUrl": "https://mybestlink.herokuapp.com",
+   "JwtSecret":""
+
+
+
+
+}

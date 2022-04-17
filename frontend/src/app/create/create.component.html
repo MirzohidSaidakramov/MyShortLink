@@ -1,0 +1,31 @@
+<div style="margin-top: 4rem;">
+    <mat-card class="card" color="primary">
+    
+        <div class="card-content">
+          <mat-card-title>
+           Yangi Silka
+          </mat-card-title>
+          <mat-card-content>
+            <form [formGroup] = "formGroup" (ngSubmit) = "save()" >
+            <mat-form-field class = "full-width" appearance="fill">
+                <mat-label>Sizning Silkangiz</mat-label>
+                <input  
+                type="text" 
+                formControlName = "silka"
+                matInput >
+                <div *ngIf = "controlForm('silka')?.touched && controlForm('silka')?.invalid ">
+                    <div style="color: red;"> {{returnErrors(controlForm('silka')?.errors)}}</div>
+      
+                </div>
+                
+              </mat-form-field>
+            </form>
+            </mat-card-content>
+          <mat-card-actions>
+            <button color="primary" type="submit" (click)="save()" [disabled]="controlForm('silka')?.invalid" mat-button>Qisqartirish</button>
+          </mat-card-actions>
+      
+        </div>
+      </mat-card>
+    </div>
+    

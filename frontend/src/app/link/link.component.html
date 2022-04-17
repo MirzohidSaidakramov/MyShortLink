@@ -1,0 +1,27 @@
+<div style="margin-top: 4rem;">
+  <mat-card class="card">
+    <div class="card-content">
+      <mat-card-title>
+        Sizning {{link?._id}} idli silkangiz:
+      </mat-card-title>
+
+      <mat-card-content>
+        <p>
+          Sizning silkangiz: <a href="{{link?.from}}">{{link?.from}}</a>
+        </p>
+        <p>
+          Qisqartirilgan silka: <a href="{{link?.to}}">{{link?.to}}</a>
+        </p>
+        <p>
+          Ulanishlar soni: {{link?.clicks}}
+        </p>
+        <p>
+            Yaratilgan Sana: {{link?.date|date}}
+          </p>
+
+
+      </mat-card-content>
+
+    </div>
+  </mat-card>
+</div>
